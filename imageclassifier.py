@@ -5,7 +5,7 @@ import sys
 import cv2
 import tensorflow as tf
 import tensorflow
-defaultcam = cv2.VideoCapture(2)
+defaultcam = cv2.VideoCapture(0)
 
 facecascPath = 'haarcascade_frontalface.xml'#face
 faceCascade = cv2.CascadeClassifier(facecascPath)
