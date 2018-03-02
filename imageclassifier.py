@@ -9,8 +9,11 @@ faceCascade = cv2.CascadeClassifier(cascPath)
 hello = tf.constant("hello world")
 sess = tf.Session()
 print(sess.run(hello))
-defaultcam = cv2.VideoCapture(0)
 
+
+
+defaultcam = cv2.VideoCapture(2)
+print("if cam feed wont display make sure the VideoCapture is set to the correct num. realsense:2, 7559:0")
 while(True):
     ret, frame = defaultcam.read()# returns t/f if frame is read correctly
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -21,6 +24,8 @@ while(True):
         minSize=(30, 30),
         flags=cv2.CASCADE_SCALE_IMAGE
     )
+    
+
 
     # Draw a rectangle around the face
     for (x, y, w, h) in faces:
